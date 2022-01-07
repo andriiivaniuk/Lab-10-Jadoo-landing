@@ -11,6 +11,7 @@
     .header__nav{
         margin-top: 30px;
         font-family: 'Open Sans';
+        font-weight: 600;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -48,7 +49,7 @@
             margin: 7px;
             
             &:hover{
-                text-shadow: 12px 9px 13px rgba(0,0,0,0.33);
+                text-shadow: 3px 3px 4px rgba(0,0,0,0.34);
                 border-radius: 10%;
             }
 
