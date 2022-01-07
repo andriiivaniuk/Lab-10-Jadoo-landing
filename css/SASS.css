@@ -21,21 +21,48 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 100%;
 }
 
-.header .header__nav .header__nav-item .header__nav-item__logo {
-  width: 115px;
+.header .header__nav .header__nav-item__logo {
+  width: 20%;
   height: 40px;
   background-image: url("../images/Jadoo-logo.svg");
+  background-position: left;
   background-repeat: no-repeat;
   -o-object-fit: contain;
      object-fit: contain;
+  position: relative;
+  overflow: hidden;
+}
+
+.header .header__nav .header__nav-item__logo::after {
+  position: absolute;
+  content: '';
+  background-image: url("../images/Jadoo-logo-back.png");
+  left: +73px;
+  bottom: +5px;
+  width: 40px;
+  height: 18px;
+  z-index: -1;
+}
+
+.header .header__nav .header__nav-item {
+  margin: 7px;
+}
+
+.header .header__nav .header__nav-item:hover {
+  text-shadow: 12px 9px 13px rgba(0, 0, 0, 0.33);
+  border-radius: 10%;
 }
 
 .header .header__nav .header__nav-item .header__nav-item__sign-up-but {
-  border: solid 1px black;
+  padding: 8px 12px;
+  border: 1px black solid;
+  border-radius: 5px;
 }
 
 .header .header__nav .header__nav-item .header__nav-item__lang-but {
@@ -43,9 +70,13 @@
 }
 
 .header .header__nav .header__nav-item .header__nav-item__lang-but::after {
-  position: absolute;
-  right: 0;
-  top: 40%;
+  content: '';
+  height: 6px;
+  width: 10px;
+  display: inline-block;
+  margin-left: 5px;
+  padding-bottom: 2px;
   background-image: url("../images/language-arrow.svg");
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=SASS.css.map */
