@@ -707,6 +707,101 @@
   z-index: -2;
 }
 
+.book-trip .book-trip__right-side .book-trip__window:hover .hidden_block:first-child {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block {
+  bottom: 50%;
+  right: -10%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-box-shadow: 0px 50px 60px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 50px 60px 0px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  background-color: white;
+  max-width: 263px;
+  max-height: 129px;
+  padding: 16px;
+  border-radius: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block .window__hidden-picture {
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block .window__hidden-text {
+  margin-left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  text-align: left;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block .window__hidden-text .hidden__subheader {
+  font-size: 14px;
+  line-height: 17px;
+  color: #84829a;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block .window__hidden-text .hidden__header {
+  margin-top: 6px;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block .window__hidden-text .hidden__percents {
+  margin-top: 10px;
+  color: #a81ca8;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block .window__hidden-text .hidden__percents-completed {
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block .window__hidden-text .hidden__percent-bar-empty {
+  margin-top: 10px;
+  width: 156px;
+  height: 5px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  position: relative;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .hidden_block .window__hidden-text .hidden__percent-bar-progress {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  margin-top: 10px;
+  width: 40%;
+  height: 5px;
+  background-color: #a81ca8;
+  border-radius: 4px;
+}
+
 .book-trip .book-trip__right-side .book-trip__window .book-trip__image-wrapper {
   max-width: 320px;
   max-height: 161px;
@@ -751,8 +846,25 @@
 }
 
 .book-trip .book-trip__right-side .book-trip__window .window__building-icon {
-  display: inline-block;
+  display: block;
   max-height: 16px;
   max-width: 16px;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .window__like-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .window__like-button {
+  display: block;
+  max-height: 22px;
 }
 /*# sourceMappingURL=SASS.css.map */
