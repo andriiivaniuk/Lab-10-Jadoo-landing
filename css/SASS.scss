@@ -763,3 +763,38 @@ $animation-speed: 0.2s;
 
     }
 }
+
+.airlines{
+    max-width: 1100px;
+    margin-top: 95px;
+    display: flex;
+    justify-content: space-around;
+
+    .aitlines__set-item{
+        width: 281px;
+        height: 86px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: grayscale(100%);
+        border-radius: 10px;
+        transition: $animation-speed;
+
+        &:hover{
+            box-shadow: 0px 50px 60px 0px rgba(0, 0, 0, 0.1);
+            filter: none;
+            cursor: pointer;
+        }
+    }
+
+    .airlines__image-wrapper{
+        
+
+        .airlines__image-image{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
