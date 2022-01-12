@@ -924,8 +924,66 @@
 .subscribe-panel {
   margin-top: 120px;
   max-width: 1200px;
-  background-color: #DFD7F9;
+  background-color: rgba(223, 215, 249, 0.2);
   border-radius: 120px 20px 20px 20px;
+  position: relative;
+}
+
+.subscribe-panel::before {
+  position: absolute;
+  content: '';
+  background-image: url("../images/subscribe-outter-decor.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 155px;
+  height: 166px;
+  bottom: -70px;
+  right: -100px;
+}
+
+@media only screen and (max-width: 740px) {
+  .subscribe-panel::before {
+    display: none;
+  }
+}
+
+.subscribe-panel::after {
+  position: absolute;
+  content: '';
+  background-image: url("../images/email-send-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  height: 70px;
+  width: 70px;
+  top: -13px;
+  right: -20px;
+}
+
+.subscribe-panel .subscribe-panel__decor-left {
+  position: absolute;
+  background-image: url("../images/email-decor-1.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  display: block;
+  height: 350px;
+  max-width: 450;
+  width: 100%;
+  left: -90px;
+  bottom: 0;
+}
+
+.subscribe-panel .subscribe-panel__decor-right {
+  position: absolute;
+  background-image: url("../images/email-decor-2.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  display: block;
+  height: 350px;
+  max-width: 450;
+  width: 100%;
+  right: 0;
+  top: 0;
 }
 
 .subscribe-panel .subscribe-panel__header {
@@ -954,6 +1012,23 @@
   gap: 24px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: relative;
+}
+
+.subscribe-panel .email__form .form__mail-input-wrapper {
+  position: relative;
+}
+
+.subscribe-panel .email__form .form__mail-icon {
+  left: 25px;
+  bottom: 25px;
+  z-index: +1;
+  position: absolute;
+  background-image: url("../images/mail-icon.svg");
+  display: block;
+  width: 21px;
+  height: 18px;
+  background-repeat: no-repeat;
 }
 
 .subscribe-panel .email__form input[type=email] {
@@ -961,6 +1036,16 @@
   border-radius: 10px;
   height: 68px;
   width: 420px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  padding-left: 60px;
 }
 
 .subscribe-panel .email__form .form__button {

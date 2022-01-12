@@ -1,5 +1,5 @@
 $animation-speed: 0.2s;
-$email-panel-color: #DFD7F9;
+$email-panel-color: rgba(223, 215, 249, 0.2);
 $text-color-general: #5E6282;
 $text-color-title: rgba(20, 24, 62, 1);
 
@@ -813,6 +813,63 @@ $text-color-title: rgba(20, 24, 62, 1);
     max-width: 1200px;
     background-color: $email-panel-color;
     border-radius: 120px 20px 20px 20px;
+    position: relative;
+
+    &::before{
+        position: absolute;
+        content: '';
+        background-image: url('../images/subscribe-outter-decor.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 155px;
+        height: 166px;
+        bottom: -70px;
+        right: -100px;
+
+        @media only screen and (max-width: 740px) {
+            display: none;
+        }
+        
+    }
+
+    &::after{
+        position: absolute;
+        content: '';
+        background-image: url('../images/email-send-icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        height: 70px;
+        width: 70px;
+        top: -13px;
+        right: -20px;
+    }
+
+    .subscribe-panel__decor-left{
+        position: absolute;
+        background-image: url('../images/email-decor-1.svg');
+        background-repeat: no-repeat;
+        background-position: left;
+        display: block;
+        height: 350px;
+        max-width: 450;
+        width: 100%;
+        left: -90px;
+        bottom: 0;
+    }
+
+    .subscribe-panel__decor-right{
+        position: absolute;
+        background-image: url('../images/email-decor-2.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        display: block;
+        height: 350px;
+        max-width: 450;
+        width: 100%;
+        right: 0;
+        top: 0;
+    }
 
     .subscribe-panel__header{
 
@@ -832,18 +889,49 @@ $text-color-title: rgba(20, 24, 62, 1);
     }
 
     .email__form{
+        
         margin-top: 75px;
         margin-bottom: 75px;
         display: flex;
         justify-content: center;
         gap: 24px;
         flex-wrap: wrap;
+        position: relative;
+
+        .form__mail-input-wrapper{
+            position: relative;
+        }
+
+        .form__mail-icon{
+            
+            left: 25px;
+            bottom: 25px;
+            z-index: +1;
+            position: absolute;
+            background-image: url('../images/mail-icon.svg');
+            display: block;
+            width: 21px;
+            height: 18px;
+            background-repeat: no-repeat;
+        }
 
         input[type=email]{
             border: none;
             border-radius: 10px;
             height: 68px;
             width: 420px;
+            box-sizing: border-box;
+            border: none;
+
+            font-family: 'Open Sans';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0em;
+
+            padding-left: 60px;
+            
         }
 
         .form__button{
@@ -867,4 +955,5 @@ $text-color-title: rgba(20, 24, 62, 1);
             }
         }
     }
+
 }
