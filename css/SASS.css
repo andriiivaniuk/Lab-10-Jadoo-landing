@@ -434,6 +434,8 @@ html {
 @media only screen and (max-width: 505px) {
   .reusable-subheader {
     text-align: center;
+    font-size: 16px;
+    line-height: 16px;
   }
 }
 
@@ -452,6 +454,8 @@ html {
 @media only screen and (max-width: 505px) {
   .reusable-slogan {
     text-align: center;
+    font-size: 38px;
+    line-height: 38px;
   }
 }
 
@@ -1127,6 +1131,12 @@ html {
   right: -20px;
 }
 
+@media only screen and (max-width: 360px) {
+  .subscribe-panel::after {
+    right: 20px;
+  }
+}
+
 .subscribe-panel .subscribe-panel__decor-left {
   position: absolute;
   background-image: url("../images/email-decor-1.svg");
@@ -1322,6 +1332,16 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (max-width: 430px) {
+  .footer .footer-content .footer__info-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
 }
 
 .footer .footer-content .footer__info-set {

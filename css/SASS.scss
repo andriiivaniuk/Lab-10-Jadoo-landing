@@ -386,6 +386,8 @@ html{
 
     @include mq-max(505px){
         text-align: center;
+        font-size: 16px;
+        line-height: 16px;
     }
 }
 
@@ -403,6 +405,8 @@ html{
 
     @include mq-max(505px){
         text-align: center;
+        font-size: 38px;
+        line-height: 38px;
     }
 }
     
@@ -944,6 +948,10 @@ html{
     border-radius: 120px 20px 20px 20px;
     position: relative;
 
+    @include mq-max(360px){
+
+    }
+
 
     &::before{
         position: absolute;
@@ -973,6 +981,10 @@ html{
         width: 70px;
         top: -13px;
         right: -20px;
+
+        @include mq-max(360px){
+            right: 20px;
+        }
     }
 
     .subscribe-panel__decor-left{
@@ -1150,6 +1162,11 @@ html{
 
         .footer__info-wrapper{
             display: flex;
+
+            @include mq-max(430px){
+                flex-direction: column;
+                gap: 30px;
+            }
         }
 
         .footer__info-set{
