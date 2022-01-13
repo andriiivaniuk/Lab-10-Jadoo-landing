@@ -47,8 +47,15 @@ html{
         display: block;
         position: absolute;
         z-index: -1;
-        right: 0;
+        right: 7%;
         top: 0;
+
+        @include mq-max(782px){
+            right: -12.5%;
+            top: -108px;
+            transform: scale(0.75);
+
+        }
 
     }
 }
@@ -104,10 +111,11 @@ html{
         }
 
         .header__nav-item{
-                margin: 7px;
-                transition: $animation-speed;
-                text-decoration: none;
-                color: $text-color-title;
+
+            margin: 7px;
+            transition: $animation-speed;
+            text-decoration: none;
+            color: $text-color-title;
             
             &:hover{
                 text-shadow: 3px 3px 4px rgba(0,0,0,0.34);
@@ -120,53 +128,59 @@ html{
             border: 1px black solid;
             border-radius: 5px;
         }
+
+        #toggle-input{
+            display: none;
+        }
+
+        #toggle-input:checked ~ .header__lang-button .lang__hidden-list{
+            visibility: visible;
+        }
+
+        #toggle-input:checked ~ .header__lang-button .toggle-button img{
+            transform: rotate(180deg);
+            transition: $animation-speed;
+        }
     
         .header__lang-button{
-
+            
             position: relative;
-            
-                
-            &::after{
-                content: '';
-                height: 6px;
-                width: 10px;
-                display: inline-block;
-                margin-left: 5px;
-                padding-bottom: 4px;
-                background-image: url('../images/language-arrow.svg');
-                background-repeat: no-repeat;
-                background-position: center;
-                transition: $animation-speed;
-            }
-            
-            &:hover .lang__hidden-list{
-                visibility: visible;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                justify-content: space-around;
-            }
 
-            &:hover::after{
-                transform: rotate(180deg);
+            .toggle-button{
+                display: block;
+                position: absolute;
+                right: -15px;
+                bottom: +2px;
+
+                &:hover{
+                    cursor: pointer;
+                }
             }
             
             .lang__hidden-list{
+                
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
                 position: absolute;
                 visibility:hidden;
-
                 height: fit-content;
-                width: 50px;
-                padding-top: 10px;
+                margin-top: 10px;
                 left: 0;
+                z-index: +1;
                 
                 transition: opacity $animation-speed;
 
             }
 
             .hidden-list__lang-option{
-                display: inline;
+                display: block;
                 color: $text-color-general;
+
+                &:hover{
+                    cursor: pointer;
+                    text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.3);
+                }
             }
 
         }
@@ -175,6 +189,14 @@ html{
         margin-top: 130px;
         display: flex;
         justify-content: space-between;
+
+        @include mq-max(1177px){
+            flex-wrap: wrap;
+
+            .header__main-content-left{
+                flex-basis: 100%;
+            }
+        }
 
 
         .header__main-content-left{
@@ -206,17 +228,34 @@ html{
             color: $text-color-title;
             position: relative;
 
-            &::after{
-                position: absolute;
-                content: '';
-                background-image: url('../images/slogan-decore.png');
-                // background-color: #C4C4C4;
-                width: 385px;
-                height: 12px;
-                right: -9%;
-                top: 26%;
-                z-index: -1;
+            @include mq-max(619px){
+                font-size: 45px;
+                line-height: 45px;
             }
+
+            .slogan__enjoy-word{
+
+                position: relative;
+
+                &::after{
+                    position: absolute;
+                    content: '';
+                    background-image: url('../images/slogan-decore.png');
+                    // background-color: #C4C4C4;
+                    width: 315px;
+                    height: 12px;
+                    right: -50px;
+                    bottom:  12px;
+                    z-index: -1;
+
+                    @include mq-max(619px){
+                        transform: scale(0.4);
+                        right: -84px;
+                        bottom:  6px;
+                    }
+                }
+            }
+
         }
 
         .header__main-content-subtitle{
@@ -232,10 +271,20 @@ html{
         }
 
         .header__image-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             margin-left: -130px;
             margin-top: -100px;
             max-height: 764px;
             position: relative;
+
+            @include mq-max(1177px){
+                margin-top: 10px;
+                max-height: 500px;
+                margin-left: 0;
+            }
         }
 
         .header__main-picture{
@@ -332,6 +381,12 @@ html{
     line-height: 27px;
     letter-spacing: 0em;
     color: $text-color-general;
+    position: relative;
+    display: block;
+
+    @include mq-max(505px){
+        text-align: center;
+    }
 }
 
 .reusable-slogan{
@@ -345,6 +400,10 @@ html{
     color: $text-color-title;
 
     position: relative;
+
+    @include mq-max(505px){
+        text-align: center;
+    }
 }
     
 .best-services{
@@ -378,8 +437,8 @@ html{
                 left: 70%;
             }
 
-            @include mq-max(484px) {
-                display: none;
+            @include mq-max(485px) {
+                left: 20%;
             }
         }
     }
@@ -390,7 +449,7 @@ html{
         align-items: center;
         justify-content: space-around;
 
-        @include mq-max(769px) {
+        @include mq-max(815px) {
             flex-wrap: wrap;
         }
     }
@@ -594,10 +653,17 @@ html{
     position: relative; 
 
     display: flex;
-    
 
+    @include mq-max(750px){
+        flex-wrap: wrap;
+    }
+    
     .book-trip__left-side{
         flex-basis: 50%;
+        
+        @include mq-max(750px){
+            flex-basis: 90%;
+        }
 
         .book-trip__instruction-set{
             margin-top: 30px;
@@ -642,6 +708,11 @@ html{
         flex-basis: 50%;
         display: flex;
         justify-content: center;
+
+        @include mq-max(750px){
+            margin-top: 30px;
+            flex-basis: 80%;
+        }
 
         .book-trip__window{
             align-self: center;
@@ -695,6 +766,10 @@ html{
                 border-radius: 18px;
                 display: flex;
                 transition: $animation-speed ease-in-out;
+
+                @include mq-max(848px){
+                    right: 0;
+                }
 
                 .window__hidden-picture{
                     display: block;
@@ -820,7 +895,6 @@ html{
                 max-height: 22px;
             }
         }
-
     }
 }
 
@@ -854,7 +928,6 @@ html{
 
     .airlines__image-wrapper{
         
-
         .airlines__image-image{
             width: 100%;
             height: auto;
@@ -1042,7 +1115,9 @@ html{
         display: flex;
 
         @include mq-max(1220px){
-            
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
         .footer__jadoo-set{
@@ -1073,11 +1148,20 @@ html{
             }
         }
 
+        .footer__info-wrapper{
+            display: flex;
+        }
+
         .footer__info-set{
             margin-top: 15px;
             margin-left: 80px;
             display: flex;
             flex-direction: column;
+
+            @include mq-max(1220px){
+                margin-left: 0;
+                margin-right: 30px;
+            }
 
             .info-set__title{
                 margin-bottom: 12px;
@@ -1108,6 +1192,10 @@ html{
             display: flex;
             flex-direction: column;
 
+            @include mq-max(1220px){
+                margin-left: 0;
+            }
+
             .social-media-set__icon-set{
                 display: flex;
                 max-width: 200px;
@@ -1131,7 +1219,6 @@ html{
                         rgba(48, 230, 255, 1), rgba(73, 162, 244, 1),
                         rgba(231, 218, 118, 1), rgba(78, 171, 250, 1),
                         rgba(195, 80, 133, 1), rgba(233, 7, 7, 1));
-                        
                     }
                     
                     &:hover .item__picture{
@@ -1169,10 +1256,8 @@ html{
                     &:hover{
                         cursor: pointer;
                     }
-                    
                 }
             }
-
         }
     }
 
