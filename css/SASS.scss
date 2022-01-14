@@ -4,6 +4,12 @@
     }
 }
 
+@mixin mq-min($size) {
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
 $animation-speed: 0.2s;
 $email-panel-color: rgba(223, 215, 249, 0.2);
 $text-color-general: #5E6282;
@@ -62,7 +68,22 @@ html{
             right: -12.5%;
             top: -108px;
             transform: scale(0.75);
+        }
 
+        @include mq-min(2100px){
+            right: 16%;
+        }
+
+        @include mq-min(2600px){
+            right: 25%;
+        }
+
+        @include mq-min(3100px){
+            right: 32%;
+        }
+
+        @include mq-min(4000px){
+            right: 39%;
         }
 
     }
@@ -889,6 +910,14 @@ html{
                 gap: 13px;
             }
 
+            .icon-set__picture{
+                display: block;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
             .window__people-going-set{
                 margin-top: 30px;
                 color: $text-color-general;
@@ -1228,6 +1257,7 @@ html{
             margin-left: 40px;
             margin-right: 40px;  
             font-size: 22px;
+            line-height: 22px;
         }
         
     }
@@ -1257,6 +1287,10 @@ html{
             width: 21px;
             height: 18px;
             background-repeat: no-repeat;
+
+            @include mq-max(350px){
+                left: 10px;
+            }
         }
 
         input[type=email]{
@@ -1278,6 +1312,10 @@ html{
 
             @include mq-max(579px){
                 width: 300px;
+            }
+
+            @include mq-max(318px){
+                width: 220px;
             }
             
         }
@@ -1395,6 +1433,10 @@ html{
                 line-height: 22px;
                 letter-spacing: 0em;
                 color: $text-color-general;
+
+                &:hover{
+                    color: rgb(255, 148, 109);
+                }
             }
         }
 

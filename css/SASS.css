@@ -66,6 +66,30 @@ html {
   }
 }
 
+@media only screen and (min-width: 2100px) {
+  .background-images .nav-figure {
+    right: 16%;
+  }
+}
+
+@media only screen and (min-width: 2600px) {
+  .background-images .nav-figure {
+    right: 25%;
+  }
+}
+
+@media only screen and (min-width: 3100px) {
+  .background-images .nav-figure {
+    right: 32%;
+  }
+}
+
+@media only screen and (min-width: 4000px) {
+  .background-images .nav-figure {
+    right: 39%;
+  }
+}
+
 .header {
   width: 100%;
   max-width: 1200px;
@@ -1024,6 +1048,14 @@ html {
   gap: 13px;
 }
 
+.book-trip .book-trip__right-side .book-trip__window .icon-set__picture {
+  display: block;
+}
+
+.book-trip .book-trip__right-side .book-trip__window .icon-set__picture:hover {
+  cursor: pointer;
+}
+
 .book-trip .book-trip__right-side .book-trip__window .window__people-going-set {
   margin-top: 30px;
   color: #5E6282;
@@ -1422,6 +1454,7 @@ html {
     margin-left: 40px;
     margin-right: 40px;
     font-size: 22px;
+    line-height: 22px;
   }
 }
 
@@ -1456,6 +1489,12 @@ html {
   background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 350px) {
+  .subscribe-panel .email__form .form__mail-icon {
+    left: 10px;
+  }
+}
+
 .subscribe-panel .email__form input[type=email] {
   border: none;
   border-radius: 10px;
@@ -1476,6 +1515,12 @@ html {
 @media only screen and (max-width: 579px) {
   .subscribe-panel .email__form input[type=email] {
     width: 300px;
+  }
+}
+
+@media only screen and (max-width: 318px) {
+  .subscribe-panel .email__form input[type=email] {
+    width: 220px;
   }
 }
 
@@ -1623,6 +1668,10 @@ html {
   line-height: 22px;
   letter-spacing: 0em;
   color: #5E6282;
+}
+
+.footer .footer-content .footer__info-set .info-set__link:hover {
+  color: #ff946d;
 }
 
 .footer .footer-content .footer__social-media-set {
