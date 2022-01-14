@@ -37,6 +37,14 @@ html{
         left: 0;
     }
 
+    .background-images__back-blur-bot{
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+
      .nav-figure{
         background-image: url('../images/header-back-figure.png');
         background-repeat: no-repeat;
@@ -403,7 +411,7 @@ html{
 
     position: relative;
 
-    @include mq-max(505px){
+    @include mq-max(624px){
         text-align: center;
         font-size: 38px;
         line-height: 38px;
@@ -482,6 +490,7 @@ html{
             font-weight: 600;
             line-height: 27px;
             letter-spacing: 0em;
+            text-align: center;
         }
 
         .item-text{
@@ -750,6 +759,11 @@ html{
                 right: 73px;
                 box-shadow: 55px -47px 120px 100px rgba(24, 135, 219, 0.2);
                 z-index: -2;
+
+                @include mq-max(420px){
+                    width: 130px;
+                    right: 40px;
+                }
             }
 
             &:hover .hidden_block:first-child{
@@ -902,9 +916,190 @@ html{
     }
 }
 
+.testimonials{
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 200px;
+    display: flex;
+
+    @include mq-max(1150px){
+        flex-wrap: wrap;
+    }
+
+    .testimonials__header{
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+
+        @include mq-max(1150px){
+            flex-basis: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .testimonials__circles-set{
+        margin-top: 80px;
+        display: flex;
+        gap: 25px;
+        max-width: 90px;
+
+        .circles-set__circle{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .circles-set__grey-circle{
+            background-color: rgba(229, 229, 229, 1);
+        }
+
+        .circles-set__black-circle{
+            background-color: rgba(57, 66, 93, 1);
+        }
+    }
+
+    .testimonials__content{
+        flex-basis: 60%;
+        padding-top: 35px;
+        padding-left: 35px;
+        position: relative;
+        display: flex;
+
+        @include mq-max(1150px){
+            flex-basis: 100%;
+        }
+
+        @include mq-max(650px){
+            padding-top: 15px;
+            padding-left: 15px;
+        }
+
+        .testimonials__opinions-wrapper{
+
+        }
+
+        .testimonials__opinion-arrows{
+            margin-left: 115px;
+            margin-top: 120px;
+            
+
+            @include mq-max(1150px){
+                margin-left: 75px;
+            }
+
+            @include mq-max(400px){
+                margin-left: 30px;
+                
+            }
+        }
+
+        .testimonials__opinion-top{
+            background-color: white;
+            width: fit-content;
+            height: fit-content;
+            border-radius: 10px;
+            box-shadow: 30px 50px 80px 0px rgba(0, 0, 0, 0.1);
+            position: relative;
+
+
+            &::after{
+                position: absolute;
+                content: '';
+                background-image: url('../images/testimonial-avatar.png');
+                background-repeat: no-repeat;
+                display: block;
+                height: 68px;
+                width: 68px;
+                top: -35px;
+                left: -25px;
+
+                @include mq-max(650px){
+                    left: 0;
+                }
+            }
+        }
+
+        .testimonials__opinion-bottom{
+            z-index: -5;
+            width: 75%;
+            height: fit-content;
+            border-radius: 10px;
+            border: solid rgb(243, 243, 243) 3px;
+            position: absolute;
+            top: +125px;
+            left: +80px;
+
+            .opinion-top__text-wrapper{
+                padding-bottom: 20px;
+            }
+
+            @include mq-max(650px){
+                width: 60%;
+            }
+
+            @include mq-max(400px){
+                top: 30px;
+                
+            }
+
+        }
+
+        .opinion-top__text-wrapper{
+            display: block;
+            padding-top: 28px;
+            padding-left: 35px;
+            padding-right: 68px;
+            padding-bottom: 34px;
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+
+            
+            @include mq-max(1150px){
+                padding-right: 25px;
+            }
+
+            @include mq-max(650px){
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .opinion-top__text{
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 32px;
+                letter-spacing: 0em;
+                color: $text-color-general;
+            }
+
+            .text__signature-name{
+                margin-top: 34px;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 27px;
+                letter-spacing: 0em;
+                color: $text-color-general;
+            }
+
+            .text__signature-position{
+
+                margin-top: 5px;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 21px;
+                letter-spacing: 0em;
+            }
+        }
+    }
+}
+
 .airlines{
     max-width: 1100px;
-    margin-top: 95px;
+    margin-top: 180px;
     display: flex;
     justify-content: space-around;
 

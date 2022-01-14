@@ -34,6 +34,14 @@ html {
   left: 0;
 }
 
+.background-images .background-images__back-blur-bot {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
 .background-images .nav-figure {
   background-image: url("../images/header-back-figure.png");
   background-repeat: no-repeat;
@@ -451,7 +459,7 @@ html {
   position: relative;
 }
 
-@media only screen and (max-width: 505px) {
+@media only screen and (max-width: 624px) {
   .reusable-slogan {
     text-align: center;
     font-size: 38px;
@@ -562,6 +570,7 @@ html {
   font-weight: 600;
   line-height: 27px;
   letter-spacing: 0em;
+  text-align: center;
 }
 
 .best-services .best-services__item .item-text {
@@ -873,6 +882,13 @@ html {
   z-index: -2;
 }
 
+@media only screen and (max-width: 420px) {
+  .book-trip .book-trip__right-side .book-trip__window::before {
+    width: 130px;
+    right: 40px;
+  }
+}
+
 .book-trip .book-trip__right-side .book-trip__window:hover .hidden_block:first-child {
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -1040,9 +1056,233 @@ html {
   max-height: 22px;
 }
 
+.testimonials {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 1150px) {
+  .testimonials {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.testimonials .testimonials__header {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (max-width: 1150px) {
+  .testimonials .testimonials__header {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.testimonials .testimonials__circles-set {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  max-width: 90px;
+}
+
+.testimonials .testimonials__circles-set .circles-set__circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.testimonials .testimonials__circles-set .circles-set__grey-circle {
+  background-color: #e5e5e5;
+}
+
+.testimonials .testimonials__circles-set .circles-set__black-circle {
+  background-color: #39425d;
+}
+
+.testimonials .testimonials__content {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  padding-top: 35px;
+  padding-left: 35px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 1150px) {
+  .testimonials .testimonials__content {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .testimonials .testimonials__content {
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+}
+
+.testimonials .testimonials__content .testimonials__opinion-arrows {
+  margin-left: 115px;
+  margin-top: 120px;
+}
+
+@media only screen and (max-width: 1150px) {
+  .testimonials .testimonials__content .testimonials__opinion-arrows {
+    margin-left: 75px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .testimonials .testimonials__content .testimonials__opinion-arrows {
+    margin-left: 30px;
+  }
+}
+
+.testimonials .testimonials__content .testimonials__opinion-top {
+  background-color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  -webkit-box-shadow: 30px 50px 80px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 30px 50px 80px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.testimonials .testimonials__content .testimonials__opinion-top::after {
+  position: absolute;
+  content: '';
+  background-image: url("../images/testimonial-avatar.png");
+  background-repeat: no-repeat;
+  display: block;
+  height: 68px;
+  width: 68px;
+  top: -35px;
+  left: -25px;
+}
+
+@media only screen and (max-width: 650px) {
+  .testimonials .testimonials__content .testimonials__opinion-top::after {
+    left: 0;
+  }
+}
+
+.testimonials .testimonials__content .testimonials__opinion-bottom {
+  z-index: -5;
+  width: 75%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  border: solid #f3f3f3 3px;
+  position: absolute;
+  top: +125px;
+  left: +80px;
+}
+
+.testimonials .testimonials__content .testimonials__opinion-bottom .opinion-top__text-wrapper {
+  padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 650px) {
+  .testimonials .testimonials__content .testimonials__opinion-bottom {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .testimonials .testimonials__content .testimonials__opinion-bottom {
+    top: 30px;
+  }
+}
+
+.testimonials .testimonials__content .opinion-top__text-wrapper {
+  display: block;
+  padding-top: 28px;
+  padding-left: 35px;
+  padding-right: 68px;
+  padding-bottom: 34px;
+  font-family: 'Poppins';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (max-width: 1150px) {
+  .testimonials .testimonials__content .opinion-top__text-wrapper {
+    padding-right: 25px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .testimonials .testimonials__content .opinion-top__text-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.testimonials .testimonials__content .opinion-top__text-wrapper .opinion-top__text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  color: #5E6282;
+}
+
+.testimonials .testimonials__content .opinion-top__text-wrapper .text__signature-name {
+  margin-top: 34px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0em;
+  color: #5E6282;
+}
+
+.testimonials .testimonials__content .opinion-top__text-wrapper .text__signature-position {
+  margin-top: 5px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+}
+
 .airlines {
   max-width: 1100px;
-  margin-top: 95px;
+  margin-top: 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
