@@ -548,9 +548,7 @@ html{
         &:hover::after{
             visibility: visible;
         }
-
     }
-
 }
 
 .top-destinations{
@@ -735,7 +733,6 @@ html{
                 }
             }
         }
-
     }
 
     .book-trip__right-side{
@@ -745,7 +742,7 @@ html{
 
         @include mq-max(750px){
             margin-top: 30px;
-            flex-basis: 80%;
+            flex-basis: 100%;
         }
 
         .book-trip__window{
@@ -767,7 +764,6 @@ html{
             letter-spacing: 0.015em;
 
             position: relative;
-
 
             &::before{
                 display: block;

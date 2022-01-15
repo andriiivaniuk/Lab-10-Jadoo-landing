@@ -862,8 +862,8 @@ html {
 @media only screen and (max-width: 750px) {
   .book-trip .book-trip__right-side {
     margin-top: 30px;
-    -ms-flex-preferred-size: 80%;
-        flex-basis: 80%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
 }
 
