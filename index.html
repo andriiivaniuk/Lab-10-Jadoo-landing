@@ -22,7 +22,14 @@
         <header class = "header">
         
             <nav class ="header__nav">
+
+                <input type="checkbox" class = "toggle-input-hamburger" id="toggle-input-hamburger">
                 <a class = "header__nav-logo" href = "#"></a>
+
+                <label class="nav__hamburger-button" for="toggle-input-hamburger">
+                    <img class ="nav__hamburger-picture" src="images/hamburger-white.png" alt="hamburger-menu-picture">
+                </label>
+
                 <a class = "header__nav-item" href = #top-destinations>Destinations</a>
                 <a class = "header__nav-item" href = "#">Hotels</a>
                 <a class = "header__nav-item" href = "#airlines">Flights</a>
@@ -30,25 +37,25 @@
                 <a class = "header__nav-item" href = "#">Login</a>
                 <a class = "header__nav-item header__sign-up-button" href = "#">Sign Up</a>
 
-                <input type="checkbox" id="toggle-input">
+                <input type="checkbox" class = "toggle-input-lang" id="toggle-input-lang">
 
                 <div class = "header__lang-button">
                     EN
-                    <label class = "toggle-button" for="toggle-input">
+                    <label class = "toggle-button-lang" for="toggle-input-lang">
                         <img src="images/language-arrow.svg" alt="language-arrow">
                     </label>
 
-                    <div class = "lang__hidden-list">
-                        <span class = "hidden-list__lang-option">
+                    <ul class = "lang__hidden-list">
+                        <li class = "hidden-list__lang-option">
                             UA
-                        </span>
-                        <span class = "hidden-list__lang-option">
+                        </li>
+                        <li class = "hidden-list__lang-option">
                             RU
-                        </span>
-                        <span class = "hidden-list__lang-option">
+                        </li>
+                        <li class = "hidden-list__lang-option">
                             FR
-                        </span>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
                 
             </nav>
@@ -64,11 +71,11 @@
                         </span> 
                         and live a new and full life
                     </span>
-                    <span class = "header__main-content-subtitle">
+                    <p class = "header__main-content-subtitle">
                         Built Wicket longer admire do barton vanity itself do in it.
                         Preferred to sportsmen it engrossed listening.
                         Park gate sell they west hard for the.
-                    </span>
+                    </p>
 
                     <div class = "header__buttons-set">
                         <button class = "header__find-more-button">
@@ -98,18 +105,18 @@
             <h2 class = "reusable-slogan">
                 We Offer Best Services
             </h2>
-            <article class = "best-services__content">
-                <div class="best-services__item">
+            <ul class = "best-services__list">
+                <li class="best-services__item">
                     <img class = "item-picture"
-                     src="images/best-service-01.png" alt="">
-                     <span class = "item-header">
+                    src="images/best-service-01.png" alt="">
+                    <span class = "item-header">
                         Calculated Weather 
-                     </span>
-                     <span class = "item-text">
-                        Built Wicket longer admire do barton vanity itself do in it.
                     </span>
-                </div>
-                <div class="best-services__item">
+                    <span class = "item-text">
+                            Built Wicket longer admire do barton vanity itself do in it.
+                        </span>
+                </li>
+                <li class="best-services__item">
                     <img class = "item-picture" src="images/best-service-02.png" alt="">
                     <span class = "item-header">
                         Best Flights
@@ -117,8 +124,8 @@
                     <span class = "item-text">
                         Engrossed listening. Park gate sell they west hard for the.
                     </span>
-                </div>
-                <div class="best-services__item">
+                </li>
+                <li class="best-services__item">
                     <img class = "item-picture" src="images/best-service-03.png" alt="">
                     <span class = "item-header">
                         Local Events
@@ -126,8 +133,8 @@
                     <span class = "item-text">
                         Barton vanity itself do in it. Preferd to men it engrossed listening.
                     </span>
-                </div>
-                <div class="best-services__item">
+                </li>
+                <li class="best-services__item">
                     <img class = "item-picture" src="images/best-service-04.png" alt="">
                     <span class = "item-header">
                         Customization
@@ -137,8 +144,8 @@
                         aviation services for
                         military customers
                     </span>
-                </div>
-            </article>
+                </li>
+            </ul>
         </section>
 
         <section class = "top-destinations" id = "top-destinations">
@@ -148,8 +155,8 @@
             <h3 class = "reusable-slogan">
                 Top Destinations
             </h3>
-            <article class = "top-destinations__content">
-                <div class="top-destinations__item">
+            <ul class = "top-destinations__list">
+                <li class="top-destinations__item">
                     <div class="top-destinations__picture-wrapper">
                         <img  class = "wrapped-image"
                          src="images/top-destin-01.png" alt="Rome">
@@ -161,8 +168,8 @@
                     <span class = "top-destinations__days">
                         10 Days Trip
                     </span>
-                </div>
-                <div class="top-destinations__item">
+                </li>
+                <li class="top-destinations__item">
                     <div class="top-destinations__picture-wrapper">
                         <img class = "wrapped-image"
                          src="images/top-destin-02.png" alt="Rome">
@@ -174,8 +181,8 @@
                     <span class = "top-destinations__days">
                         12 Days Trip
                     </span>
-                </div>
-                <div class="top-destinations__item">
+                </li>
+                <li class="top-destinations__item">
                     <div class="top-destinations__picture-wrapper">
                         <img class = "wrapped-image"
                          src="images/top-destin-03.png" alt="Rome">
@@ -188,12 +195,12 @@
                     <span class = "top-destinations__days">
                         28 Days Trip
                     </span>
-                </div>
-            </article>
+                </li>
+            </ul>
         </section>
 
         <section class = "book-trip" id = "book-trip">
-            <div class = "book-trip__left-side">
+            <article class = "book-trip__left-side">
                 <span class = "reusable-subheader">
                     Easy and Fast
                 </span>
@@ -201,8 +208,8 @@
                     Book Your Next Trip 
                     In 3 Easy Steps
                 </h4>
-                <article class = "book-trip__instruction-set">
-                    <div class = "instruction-item">
+                <ul class = "book-trip__instruction-set">
+                    <li class = "instruction-item">
                         <img class ="instruction-item-picture" 
                         src="images/instruction-choose.svg" alt="instruction-choose">
                         <div class = "instruction-item-text">
@@ -214,8 +221,8 @@
                                 adipiscing elit. Urna, tortor tempus. 
                             </span>
                         </div>
-                    </div>
-                    <div class = "instruction-item">
+                    </li>
+                    <li class = "instruction-item">
                         <img class ="instruction-item-picture" 
                          src="images/instruction-pay.svg" alt="instruction-pay">
                         <div class = "instruction-item-text">
@@ -227,8 +234,8 @@
                                 adipiscing elit. Urna, tortor tempus. 
                             </span>
                         </div>
-                    </div>
-                    <div class = "instruction-item">
+                    </li>
+                    <li class = "instruction-item">
                         <img class ="instruction-item-picture" 
                          src="images/instruction-reach.svg" alt="instruction-reach">
                         <div class = "instruction-item-text">
@@ -240,13 +247,13 @@
                                 adipiscing elit. Urna, tortor tempus. 
                             </span>
                         </div>
-                    </div>
-                </article>
+                    </li>
+                </ul>
 
-            </div>
+            </article>
             <article class = "book-trip__right-side">
                 <div class = "book-trip__window">
-                    <div class = "hidden_block">
+                    <div class = "hidden-block">
                         <img class="window__hidden-picture"
                         src="images/window-hidden.png" alt="rome-icon">
                         <div class = "window__hidden-text">
@@ -359,38 +366,38 @@
             </div>
         </section>
 
-        <section class = "airlines" id = "airlines">
-            <div class = "aitlines__set-item">
+        <ul class = "airlines" id = "airlines">
+            <li class = "aitlines__set-item">
                 <div class = "airlines__image-wrapper">
                     <img clas = "airlines__image-image"
                      src="images/client-logos/image 27.png" alt="">
                 </div>
-            </div>
-            <div class = "aitlines__set-item">
+            </li>
+            <li class = "aitlines__set-item">
                 <div class = "airlines__image-wrapper">
                     <img clas = "airlines__image-image"
                      src="images/client-logos/image 28.png" alt="">
                 </div>
-            </div>
-            <div class = "aitlines__set-item">
+            </li>
+            <li class = "aitlines__set-item">
                 <div class = "airlines__image-wrapper">
                     <img clas = "airlines__image-image"
                      src="images/client-logos/image 29.png" alt="">
                 </div>
-            </div>
-            <div class = "aitlines__set-item">
+            </li>
+            <li class = "aitlines__set-item">
                 <div class = "airlines__image-wrapper">
                     <img clas = "airlines__image-image"
                      src="images/client-logos/image 30.png" alt="">
                 </div>
-            </div>
-            <div class = "aitlines__set-item">
+            </li>
+            <li class = "aitlines__set-item">
                 <div class = "airlines__image-wrapper">
                     <img clas = "airlines__image-image"
                      src="images/client-logos/image 31.png" alt="">
                 </div>
-            </div>
-        </section>
+            </li>
+        </ul>
 
         <section class = "subscribe-panel">
             <div class = "subscribe-panel__decor-left">
@@ -405,12 +412,10 @@
                 <div class = "form__mail-input-wrapper">
                     <div class = "form__mail-icon">
                     </div>
-                    <input type="email" placeholder="Your email">
+                    <input type="email" class = "form__email-input-line" placeholder="Your email">
                 </div>
                 <button class = "form__button">
-                    <span>
                         Subscribe
-                    </span>
                 </button>
             </form>
         </section>
@@ -425,66 +430,65 @@
                         Control for much longer.
                     </span>
                 </div>
-                <div class = "footer__info-wrapper">
-                <div class="footer__info-set">
-                    <span class = "info-set__title">
-                        Company
-                    </span>
-                    <a class ="info-set__link" href="">
-                        About
-                    </a>
-                    <a class ="info-set__link" href="">
-                        Careers
-                    </a>
-                    <a class ="info-set__link" href="">
-                        Mobile
-                    </a>
-                </div>
-                <div class="footer__info-set">
-                    <span class = "info-set__title">
-                        Contact
-                    </span>
-                    <a class ="info-set__link" href="">
-                        Help/FAQ
-                    </a>
-                    <a class ="info-set__link" href="">
-                        Press
-                    </a>
-                    <a class ="info-set__link" href="">
-                        Affilates
-                    </a>
-                </div>
-                <div class="footer__info-set">
-                    <span class = "info-set__title">
-                        More
-                    </span>
-                    <a class ="info-set__link" href="">
-                        Airlinefees
-                    </a>
-                    <a class ="info-set__link" href="">
-                        Airline
-                    </a>
-                    <a class ="info-set__link" href="">
-                        Low fare tips
-                    </a>
-                </div>
-                
-            </div>
+                <ul class = "footer__info-wrapper">
+                    <li class="footer__info-set">
+                        <span class = "info-set__title">
+                            Company
+                        </span>
+                        <a class ="info-set__link" href="">
+                            About
+                        </a>
+                        <a class ="info-set__link" href="">
+                            Careers
+                        </a>
+                        <a class ="info-set__link" href="">
+                            Mobile
+                        </a>
+                    </li>
+                    <li class="footer__info-set">
+                        <span class = "info-set__title">
+                            Contact
+                        </span>
+                        <a class ="info-set__link" href="">
+                            Help/FAQ
+                        </a>
+                        <a class ="info-set__link" href="">
+                            Press
+                        </a>
+                        <a class ="info-set__link" href="">
+                            Affilates
+                        </a>
+                    </li>
+                    <li class="footer__info-set">
+                        <span class = "info-set__title">
+                            More
+                        </span>
+                        <a class ="info-set__link" href="">
+                            Airlinefees
+                        </a>
+                        <a class ="info-set__link" href="">
+                            Airline
+                        </a>
+                        <a class ="info-set__link" href="">
+                            Low fare tips
+                        </a>
+                    </li>
+                </ul>
                 <div class="footer__social-media-set">
-                    <div class="social-media-set__icon-set">
-                        <div class="icon-set__item">
+                    <ul class="social-media-set__icon-set">
+                        <li class="icon-set__item">
                             <img class = "item__picture"
                             src="images/social-media-icons/facebook-icon.svg" alt="facebook-icon">
-                        </div>
-                        <div class="icon-set__item">
+                        </li>
+                        <li class="icon-set__item">
                             <img class = "item__picture"
                             src="images/social-media-icons/insta-icon.png" alt="instagram-icon">
-                        </div>
-                        <div class="icon-set__item">
+                        </li>
+                        <li class="icon-set__item">
                             <img class = "item__picture"
                             src="images/social-media-icons/twitter-icon.svg" alt="twitter-icon">
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                     <span class = "social-media-set__slogan">
                         Discover our app
                     </span>

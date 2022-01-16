@@ -93,8 +93,6 @@ html{
     width: 100%;
     max-width: 1200px;
     position: relative;
-
-    //background-color: sandybrown;
     
     .header__nav{
         margin-top: 30px;
@@ -107,6 +105,125 @@ html{
 
         @include mq-max(919px) {
             flex-wrap: wrap;
+        }
+
+        @include mq-max(700px){
+            & a {
+                display: none;
+            }
+
+            .header__nav-logo{
+                display: block;
+                justify-self: flex-start;
+            }
+
+            .header__lang-button{
+                display: none;
+            }
+
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        .toggle-input-lang{
+            display: none;
+        }
+
+        .toggle-input-lang:checked ~ .header__lang-button .lang__hidden-list{
+            visibility: visible;
+        }
+
+        .toggle-input-lang:checked ~ .header__lang-button .toggle-button-lang img{
+            transform: rotate(180deg);
+            transition: $animation-speed;
+        }
+
+        .toggle-input-hamburger{
+            display: none;
+        }
+
+        .toggle-input-hamburger:checked ~ a{
+            display: block;
+        }
+
+        .toggle-input-hamburger:checked ~ .header__lang-button{
+            display: block;
+        }
+
+        .toggle-input-hamburger:checked ~ .nav__hamburger-button{
+            transform: rotate(180deg);
+        }
+
+        .nav__hamburger-button{
+            display: none;
+            cursor: pointer;
+            position: relative;
+            width: 35px;
+            height: auto;
+
+            transition: $animation-speed;
+
+            @include mq-max(700px){
+                display: block;
+            }
+
+            .nav__hamburger-picture{
+                object-fit: contain;
+                display: block;
+                max-width: 100%;
+                transition: $animation-speed;
+            }
+        }
+
+        
+    
+        .header__lang-button{
+            
+            position: relative;
+
+            .toggle-button-lang{
+                display: block;
+                position: absolute;
+                right: -15px;
+                bottom: +2px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            
+            .lang__hidden-list{
+                
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                visibility:hidden;
+                height: fit-content;
+                margin-top: 10px;
+                left: 0;
+                z-index: +1;
+                
+                transition: opacity $animation-speed;
+
+                @include mq-max(700px){
+                    flex-direction: row;
+                    left: -30px;
+                }
+
+            }
+
+            .hidden-list__lang-option{
+                display: block;
+                color: $text-color-general;
+
+                &:hover{
+                    cursor: pointer;
+                    text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.3);
+                }
+            }
+
         }
         
     }
@@ -158,61 +275,6 @@ html{
             border-radius: 5px;
         }
 
-        #toggle-input{
-            display: none;
-        }
-
-        #toggle-input:checked ~ .header__lang-button .lang__hidden-list{
-            visibility: visible;
-        }
-
-        #toggle-input:checked ~ .header__lang-button .toggle-button img{
-            transform: rotate(180deg);
-            transition: $animation-speed;
-        }
-    
-        .header__lang-button{
-            
-            position: relative;
-
-            .toggle-button{
-                display: block;
-                position: absolute;
-                right: -15px;
-                bottom: +2px;
-
-                &:hover{
-                    cursor: pointer;
-                }
-            }
-            
-            .lang__hidden-list{
-                
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                position: absolute;
-                visibility:hidden;
-                height: fit-content;
-                margin-top: 10px;
-                left: 0;
-                z-index: +1;
-                
-                transition: opacity $animation-speed;
-
-            }
-
-            .hidden-list__lang-option{
-                display: block;
-                color: $text-color-general;
-
-                &:hover{
-                    cursor: pointer;
-                    text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.3);
-                }
-            }
-
-        }
 
     .header__main-content{
         margin-top: 130px;
@@ -225,6 +287,10 @@ html{
             .header__main-content-left{
                 flex-basis: 100%;
             }
+        }
+
+        @include mq-max(700px){
+            margin-top: 40px;
         }
 
 
@@ -432,7 +498,7 @@ html{
 
     position: relative;
 
-    @include mq-max(624px){
+    @include mq-max(505px){
         text-align: center;
         font-size: 38px;
         line-height: 38px;
@@ -476,7 +542,7 @@ html{
         }
     }
 
-    .best-services__content{
+    .best-services__list{
         margin-top: 70px;
         display: flex;
         align-items: center;
@@ -561,30 +627,28 @@ html{
     flex-direction: column;
     align-items: center;
 
-    
-
-    .top-destinations__content{
+    .top-destinations__list{
         display: flex;
         gap: 35px;
         margin-top: 60px;
         flex-wrap: wrap;
         position: relative;
         justify-content: center;
+    }
 
-        & > .top-destinations__item:last-child::after{ 
-            position: absolute;
-            content: '';
-            background-image: url('../images/top-destination-decor.png');
-            background-repeat: no-repeat;
-            height: 254px;
-            width: 100px;
-            right: -65px;
-            bottom: +30px;
-            z-index: -10;
+    .top-destinations__item:last-child::after{ 
+        position: absolute;
+        content: '';
+        background-image: url('../images/top-destination-decor.png');
+        background-repeat: no-repeat;
+        height: 254px;
+        width: 100px;
+        right: -65px;
+        bottom: +30px;
+        z-index: -10;
 
-            @include mq-max(462px){
-                display: none;
-            }
+        @include mq-max(462px){
+            display: none;
         }
     }
 
@@ -618,6 +682,9 @@ html{
             max-height: 330px;
             border-radius: 24px 24px 0 0;
             
+            @include mq-max(400px){
+                max-height: 250px;
+            }
         
             .wrapped-image{
                 width: 100%;
@@ -642,6 +709,13 @@ html{
             font-weight: 500;
             line-height: 22px;
             letter-spacing: 0em;
+
+            @include mq-max(400px){
+                padding-top: 30px;
+                padding-right: 15px;
+                padding-left: 15px;
+                font-size: 15px;
+            }
         }
 
         .top-destinations__days{
@@ -661,6 +735,11 @@ html{
             position: relative;
 
             padding-bottom: 42px;
+
+            @include mq-max(400px){
+                padding-bottom: 15px;
+                font-size: 15px;
+            }
 
             &::before{
                 left: 0;
@@ -685,258 +764,243 @@ html{
     position: relative; 
 
     display: flex;
+    gap: 20px;
 
-    @include mq-max(750px){
+    @include mq-max(780px){
         flex-wrap: wrap;
     }
+}
     
-    .book-trip__left-side{
-        flex-basis: 50%;
+.book-trip__left-side{
+    flex-basis: 50%;
+    
+    @include mq-max(780px){
+        flex-basis: 100%;
+    }
+    .book-trip__instruction-set{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+    .instruction-item{
+        display: flex;
+        .instruction-item-picture{
+            margin-top: 2px;
+            align-self: flex-start;
+        }
+        .instruction-item-text{
+            max-width: 395px;
+            margin-left: 21px;
+            font-family: 'Poppins';
+            font-size: 16px;
+            font-style: normal;
+            line-height: 20px;
+            letter-spacing: 0em;
+            color: $text-color-general;
+            .instruction-item-text-header{
+                font-weight: 700;
+            }
+            .instruction-item-text-info{
+                display: block;
+                margin-top: 4px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.book-trip__right-side{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include mq-max(780px){
+        margin-top: 30px;
+        flex-basis: 100%;
+    }
+
+    .book-trip__window{
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 370px;
+        max-height: 400px;
+        background-color: white;
+        border-radius: 26px;
+        box-shadow: 0px 100px 80px 0px rgba(0, 0, 0, 0.1);
         
-        @include mq-max(750px){
-            flex-basis: 90%;
+        padding: 24px;
+        font-family: 'Poppins';
+        font-size: 18px;
+        font-style: normal;
+        line-height: 22px;
+        letter-spacing: 0.015em;
+        position: relative;
+
+        &::before{
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            content: '';
+            height: 200px;
+            width: 200px;
+            top: 46px;
+            right: 73px;
+            box-shadow: 55px -47px 120px 100px rgba(24, 135, 219, 0.2);
+            z-index: -2;
+
+            @include mq-max(420px){
+                width: 130px;
+                right: 40px;
+            }
         }
 
-        .book-trip__instruction-set{
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
+        &:hover .hidden-block{
+            transform: scale(1);
         }
 
-        .instruction-item{
+        .hidden-block{
+            bottom: 50%;
+            right: -10%;
+            transform: scale(0);
+            box-shadow: 0px 50px 60px 0px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            background-color: white;
+            max-width: 263px;
+            max-height: 129px;
+            padding: 16px;
+            border-radius: 18px;
             display: flex;
+            transition: $animation-speed ease-in-out;
 
-            .instruction-item-picture{
-                margin-top: 2px;
+            @include mq-max(848px){
+                right: 0;
+            }
+
+            .window__hidden-picture{
+                display: block;
+                object-fit: contain;
                 align-self: flex-start;
             }
 
-            .instruction-item-text{
-                max-width: 395px;
-                margin-left: 21px;
+            .window__hidden-text{
+                margin-left: 12px;
+                display: flex;
+                flex-direction: column;
                 font-family: 'Poppins';
-                font-size: 16px;
                 font-style: normal;
-                line-height: 20px;
-                letter-spacing: 0em;
+                font-weight: 500;
+                letter-spacing: -0.035em;
+                text-align: left;
+
+            .hidden__subheader{
+                font-size: 14px;
+                line-height: 17px;
                 color: $text-color-general;
+            }
 
-                .instruction-item-text-header{
-                    font-weight: 700;
-                }
+            .hidden__header{
+                margin-top: 6px;
+                font-size: 18px;
+                line-height: 22px;
+            }
 
-                .instruction-item-text-info{
-                    display: block;
-                    margin-top: 4px;
-                    font-weight: 400;
-                }
+            .hidden__percents{
+                margin-top: 10px;
+                color: rgb(168, 28, 168);
+                font-size: 14px;
+                line-height: 17px;
+            }
+
+            .hidden__percents-completed{  
+                margin-top: 10px;
+                color: rgb(0, 0, 0);
+                font-size: 14px;
+                line-height: 17px;
+            }
+
+            .hidden__percent-bar-empty{
+                margin-top: 10px;
+                width: 156px;
+                height: 5px;
+                background-color: rgba(245, 245, 245, 1);
+                border-radius: 4px;
+                position: relative;
+            }
+
+            .hidden__percent-bar-progress{
+                bottom: 0; 
+                left: 0;
+                position: absolute;
+                margin-top: 10px;
+                width: 40%;
+                height: 5px;
+                background-color:rgb(168, 28, 168); 
+                border-radius: 7px;
             }
         }
     }
-
-    .book-trip__right-side{
-        flex-basis: 50%;
-        display: flex;
-        justify-content: center;
-
-        @include mq-max(750px){
-            margin-top: 30px;
-            flex-basis: 100%;
+        .book-trip__image-wrapper{
+            
+            max-width: 320px;
+            max-height: 161px;
+            border-radius: 24px;
         }
 
-        .book-trip__window{
-            align-self: center;
+        .book-trip__window-image{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        .window__trip-name{
+            margin-top: 24px;
+            font-weight: 500;
+        }
+
+        .window__trip-info{
+            margin-top: 13px;
+            font-weight: 500;
+            line-height: 19.92px;
+            color: $text-color-general;
+        }
+
+        .window__icon-set{
+            margin-top: 20px;
             display: flex;
-            flex-direction: column;
-            max-width: 370px;
-            max-height: 400px;
-            background-color: white;
-            border-radius: 26px;
-            box-shadow: 0px 100px 80px 0px rgba(0, 0, 0, 0.1);
-            
-            padding: 24px;
+            gap: 13px;
+        }
 
-            font-family: 'Poppins';
-            font-size: 18px;
-            font-style: normal;
-            line-height: 22px;
-            letter-spacing: 0.015em;
+        .icon-set__picture{
+            display: block;
 
-            position: relative;
-
-            &::before{
-                display: block;
-                border-radius: 50%;
-                position: absolute;
-                content: '';
-                height: 200px;
-                width: 200px;
-                top: 46px;
-                right: 73px;
-                box-shadow: 55px -47px 120px 100px rgba(24, 135, 219, 0.2);
-                z-index: -2;
-
-                @include mq-max(420px){
-                    width: 130px;
-                    right: 40px;
-                }
+            &:hover{
+                cursor: pointer;
             }
+        }
 
-            &:hover .hidden_block:first-child{
-                
-                transform: scale(1);
-            }
+        .window__people-going-set{
+            margin-top: 30px;
+            color: $text-color-general;
+            display: flex;
+            gap: 15px;
+        }
 
-            .hidden_block{
-                bottom: 50%;
-                right: -10%;
-                transform: scale(0);
-                box-shadow: 0px 50px 60px 0px rgba(0, 0, 0, 0.1);
-                position: absolute;
-                background-color: white;
-                max-width: 263px;
-                max-height: 129px;
-                padding: 16px;
-                border-radius: 18px;
-                display: flex;
-                transition: $animation-speed ease-in-out;
-
-                @include mq-max(848px){
-                    right: 0;
-                }
-
-                .window__hidden-picture{
-                    display: block;
-                    object-fit: contain;
-                    align-self: flex-start;
-                }
-
-                .window__hidden-text{
-                    margin-left: 12px;
-                    display: flex;
-                    flex-direction: column;
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 500;
-                    letter-spacing: -0.035em;
-                    text-align: left;
-
-                    .hidden__subheader{
-                        font-size: 14px;
-                        line-height: 17px;
-                        color: $text-color-general;
-                    }
-
-                    .hidden__header{
-                        margin-top: 6px;
-                        font-size: 18px;
-                        line-height: 22px;
-                    }
-
-                    .hidden__percents{
-                        
-                        margin-top: 10px;
-                        color: rgb(168, 28, 168);
-                        font-size: 14px;
-                        line-height: 17px;
-                    }
-
-                    .hidden__percents-completed{
-                        
-                        margin-top: 10px;
-                        color: rgb(0, 0, 0);
-                        font-size: 14px;
-                        line-height: 17px;
-                    }
-
-                    .hidden__percent-bar-empty{
-                        margin-top: 10px;
-                        width: 156px;
-                        height: 5px;
-                        background-color: rgba(245, 245, 245, 1);
-                        border-radius: 4px;
-                        position: relative;
-                    }
-
-                    .hidden__percent-bar-progress{
-                        bottom: 0; 
-                        left: 0;
-                        position: absolute;
-                        margin-top: 10px;
-                        width: 40%;
-                        height: 5px;
-                        background-color:rgb(168, 28, 168); 
-                        border-radius: 7px;
-                    }
-
-                }
-
-            }
-
-            .book-trip__image-wrapper{
-                
-                max-width: 320px;
-                max-height: 161px;
-                border-radius: 24px;
-            }
-
-            .book-trip__window-image{
-                display: block;
-                width: 100%;
-                height: auto;
-                object-fit: fill;
-            }
-            
-            .window__trip-name{
-                margin-top: 24px;
-                font-weight: 500;
-            }
-
-            .window__trip-info{
-                margin-top: 13px;
-                font-weight: 500;
-                line-height: 19.92px;
-                color: $text-color-general;
-            }
-
-            .window__icon-set{
-                margin-top: 20px;
-                display: flex;
-                gap: 13px;
-            }
-
-            .icon-set__picture{
-                display: block;
-
-                &:hover{
-                    cursor: pointer;
-                }
-            }
-
-            .window__people-going-set{
-                margin-top: 30px;
-                color: $text-color-general;
-                display: flex;
-                gap: 15px;
-            }
-
-            .window__building-icon{
-                display: block;
-                max-height: 16px;
-                max-width: 16px;
-            }
-            
-            .window__like-wrapper{
-                flex-grow: 1;
-                display: flex;
-                justify-content: flex-end;
-            }
-
-            .window__like-button{
-                display: block;
-                max-height: 22px;
-            }
+        .window__building-icon{
+            display: block;
+            max-height: 16px;
+            max-width: 16px;
+        }
+        
+        .window__like-wrapper{
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .window__like-button{
+            display: block;
+            max-height: 22px;
         }
     }
 }
@@ -960,6 +1024,7 @@ html{
             flex-basis: 100%;
             justify-content: center;
             align-items: center;
+            text-align: center;
         }
     }
 
@@ -1289,7 +1354,7 @@ html{
             }
         }
 
-        input[type=email]{
+        .form__email-input-line{
             border: none;
             border-radius: 10px;
             height: 68px;
