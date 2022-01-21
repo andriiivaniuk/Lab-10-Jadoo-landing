@@ -35,6 +35,11 @@ html{
         padding-left: 30px;
         padding-right: 30px;
     }
+
+    @include mq-max(300px){
+        padding-left: 7px;
+        padding-right: 7px;
+    }
 }
 
 
@@ -50,6 +55,7 @@ html{
     bottom: 0;
     right: 0;
     z-index: -1;
+
 }
 
 .background-images__nav-figure{
@@ -526,6 +532,12 @@ html{
         text-align: center;
         font-size: 38px;
         line-height: 38px;
+    }
+
+    @include mq-max(300px){
+        text-align: center;
+        font-size: 25px;
+        line-height: 25px;
     }
 }
     
@@ -1075,6 +1087,10 @@ html{
     margin-top: 80px;
     display: flex;
     max-width: 120px;
+
+    @include mq-max(500px){
+        margin-left: 50px;
+    }
 }
 
 .circles-set__circle{
@@ -1082,6 +1098,10 @@ html{
     width: 12px;
     height: 12px;
     border-radius: 50%;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .circles-set__grey-circle{
@@ -1101,11 +1121,17 @@ html{
 
     @include mq-max(1150px){
         flex-basis: 100%;
+        justify-content: center;
     }
 
     @include mq-max(650px){
         padding-top: 15px;
         padding-left: 15px;
+    }
+
+    @include mq-max(500px){
+        padding-top: 7px;
+        padding-left: 7px;
     }
 }
 
@@ -1113,23 +1139,27 @@ html{
     margin-left: 115px;
     margin-top: 120px;
     
+    &:hover{
+        cursor: pointer;
+    }
 
     @include mq-max(1150px){
         margin-left: 75px;
     }
 
-    @include mq-max(400px){
-        margin-left: 30px;
-        
+    @include mq-max(500px){
+        margin-left: 20px;
     }
 }
 
 .testimonials__opinion-top{
     background-color: white;
-    width: fit-content;
+    max-width: 504px;
+    width: 100%;
     height: fit-content;
     border-radius: 10px;
     box-shadow: 30px 50px 80px 0px rgba(0, 0, 0, 0.1);
+
     position: relative;
 
 
@@ -1151,26 +1181,30 @@ html{
 }
 
 .testimonials__opinion-bottom{
-    z-index: -5;
-    width: 75%;
+
+    max-width: 504px;
+    width: 100%;
+    z-index: -2;
     height: fit-content;
     border-radius: 10px;
     border: solid rgb(243, 243, 243) 3px;
     position: absolute;
-    top: +125px;
-    left: +80px;
+    
+    margin-left: 15px;
+    margin-top: 60px;
 
     .opinion-top__text-wrapper{
         padding-bottom: 20px;
-    }
-
-    @include mq-max(650px){
-        width: 60%;
-    }
-
-    @include mq-max(400px){
-        top: 30px;
         
+    }
+
+    @include mq-max(500px){
+        margin-left: -8px;
+        margin-top: 60px;
+
+        .opinion-top__text-wrapper{
+            padding-bottom: 20px;
+        }
     }
 
 }
@@ -1185,14 +1219,11 @@ html{
     display: flex;
     flex-direction: column;
     color: $text-color-general;
-    
-    @include mq-max(1150px){
-        padding-right: 25px;
-    }
 
-    @include mq-max(650px){
+    @include mq-max(500px){
         padding-left: 15px;
         padding-right: 15px;
+        padding-top: 35px;
     }
 }
 
@@ -1251,6 +1282,10 @@ html{
         box-shadow: 0px 50px 60px 0px rgba(0, 0, 0, 0.1);
         filter: none;
         cursor: pointer;
+    }
+
+    @include mq-max(300px){
+        width: 230px;
     }
 }
 

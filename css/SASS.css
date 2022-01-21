@@ -28,6 +28,13 @@ html {
   }
 }
 
+@media only screen and (max-width: 300px) {
+  .background-images {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
 .background-images__back-blur-top {
   position: absolute;
   top: 0;
@@ -597,6 +604,14 @@ html {
     text-align: center;
     font-size: 38px;
     line-height: 38px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .reusable-slogan {
+    text-align: center;
+    font-size: 25px;
+    line-height: 25px;
   }
 }
 
@@ -1279,11 +1294,21 @@ html {
   max-width: 120px;
 }
 
+@media only screen and (max-width: 500px) {
+  .testimonials__circles-set {
+    margin-left: 50px;
+  }
+}
+
 .circles-set__circle {
   margin-right: 25px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
+}
+
+.circles-set__circle:hover {
+  cursor: pointer;
 }
 
 .circles-set__grey-circle {
@@ -1309,6 +1334,9 @@ html {
   .testimonials__content {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -1319,9 +1347,20 @@ html {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .testimonials__content {
+    padding-top: 7px;
+    padding-left: 7px;
+  }
+}
+
 .testimonials__opinion-arrows {
   margin-left: 115px;
   margin-top: 120px;
+}
+
+.testimonials__opinion-arrows:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -1330,17 +1369,16 @@ html {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .testimonials__opinion-arrows {
-    margin-left: 30px;
+    margin-left: 20px;
   }
 }
 
 .testimonials__opinion-top {
   background-color: white;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  max-width: 504px;
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -1369,31 +1407,30 @@ html {
 }
 
 .testimonials__opinion-bottom {
-  z-index: -5;
-  width: 75%;
+  max-width: 504px;
+  width: 100%;
+  z-index: -2;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 10px;
   border: solid #f3f3f3 3px;
   position: absolute;
-  top: +125px;
-  left: +80px;
+  margin-left: 15px;
+  margin-top: 60px;
 }
 
 .testimonials__opinion-bottom .opinion-top__text-wrapper {
   padding-bottom: 20px;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 500px) {
   .testimonials__opinion-bottom {
-    width: 60%;
+    margin-left: -8px;
+    margin-top: 60px;
   }
-}
-
-@media only screen and (max-width: 400px) {
-  .testimonials__opinion-bottom {
-    top: 30px;
+  .testimonials__opinion-bottom .opinion-top__text-wrapper {
+    padding-bottom: 20px;
   }
 }
 
@@ -1414,16 +1451,11 @@ html {
   color: #5E6282;
 }
 
-@media only screen and (max-width: 1150px) {
-  .opinion-top__text-wrapper {
-    padding-right: 25px;
-  }
-}
-
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 500px) {
   .opinion-top__text-wrapper {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 35px;
   }
 }
 
@@ -1495,6 +1527,12 @@ html {
   -webkit-filter: none;
           filter: none;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 300px) {
+  .aitlines__set-item {
+    width: 230px;
+  }
 }
 
 .airlines__image-image {
